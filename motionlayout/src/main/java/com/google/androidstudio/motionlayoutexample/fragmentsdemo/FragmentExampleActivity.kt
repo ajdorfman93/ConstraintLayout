@@ -23,13 +23,13 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.motion.widget.MotionScene
 import androidx.fragment.app.Fragment
 import com.google.androidstudio.motionlayoutexample.R
-import kotlinx.android.synthetic.main.main_activity.*
 
 class FragmentExampleActivity : AppCompatActivity(), View.OnClickListener, MotionLayout.TransitionListener {
 
     private var lastProgress = 0f
     private var fragment : Fragment? = null
     private var last : Float = 0f
+    private lateinit var motionLayout: MotionLayout
 
     override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {
         if (p3 - lastProgress > 0) {
@@ -75,6 +75,7 @@ class FragmentExampleActivity : AppCompatActivity(), View.OnClickListener, Motio
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
+        motionLayout = findViewById(R.id.motionLayout)
         if (savedInstanceState == null) {
             fragment = MainFragment.newInstance().also {
                 supportFragmentManager.beginTransaction()

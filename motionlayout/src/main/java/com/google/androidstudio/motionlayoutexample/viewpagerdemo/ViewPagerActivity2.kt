@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.viewpager.widget.ViewPager
 import com.google.androidstudio.motionlayoutexample.R
-import kotlinx.android.synthetic.main.motion_16_viewpager.*
+import com.google.android.material.tabs.TabLayout
 
 class ViewPagerActivity2 : AppCompatActivity() {
 
@@ -30,6 +30,8 @@ class ViewPagerActivity2 : AppCompatActivity() {
         val layout = R.layout.motion_23_viewpager
         setContentView(layout)
         val motionLayout = findViewById<MotionLayout>(R.id.motionLayout)
+        val pager: ViewPager = findViewById(R.id.pager)
+        val tabs: TabLayout = findViewById(R.id.tabs)
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addPage("Page 1", R.layout.motion_16_viewpager_page1)
