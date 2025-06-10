@@ -12,12 +12,13 @@ import com.google.androidstudio.motionlayoutexample.histogramdemo.HistogramActiv
 import com.google.androidstudio.motionlayoutexample.viewpagerdemo.ViewPagerActivity
 import com.google.androidstudio.motionlayoutexample.viewpagerdemo.ViewPagerActivity2
 import com.google.androidstudio.motionlayoutexample.youtubedemo.YouTubeDemoActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.Switch
 
 class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
+    private lateinit var showPathsSwitch: Switch
     private var doShowPaths = false
 
     private val dataset: Array<DemosAdapter.Demo> = arrayOf(
@@ -61,8 +62,8 @@ class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
             layoutManager = viewManager
             adapter = viewAdapter
         }
-
-        showPaths.setOnCheckedChangeListener(this)
+        showPathsSwitch = findViewById(R.id.showPaths)
+        showPathsSwitch.setOnCheckedChangeListener(this)
     }
 
     override fun onCheckedChanged(p0: CompoundButton?, value: Boolean) {

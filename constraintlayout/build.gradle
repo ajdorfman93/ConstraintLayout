@@ -18,6 +18,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
+    namespace 'com.example.android.constraintlayoutexamples'
     defaultConfig {
         applicationId "com.example.android.constraintlayoutexamples"
         minSdkVersion 19

@@ -23,21 +23,21 @@ buildscript {
     }
 
     ext {
-        compileSdkVersion = 28
-        targetSdkVersion = 28
+        compileSdkVersion = 34
+        targetSdkVersion = 34
 
-        appCompatVersion = '1.3.0-alpha01'
-        constraintLayoutVersion = '2.0.1'
-        glideVersion = '4.8.0'
-        kotlinVersion = '1.4.0'
-        lifeCycleVersion = '2.2.0'
-        lottieVersion = '2.5.1'
-        materialVersion = '1.3.0-alpha02'
-        junitVersion = '4.12'
+        appCompatVersion = '1.6.1'
+        constraintLayoutVersion = '2.1.4'
+        glideVersion = '4.16.0'
+        kotlinVersion = '1.9.22'
+        lifeCycleVersion = '2.6.2'
+        lottieVersion = '6.4.0'
+        materialVersion = '1.10.0'
+        junitVersion = '4.13.2'
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath 'com.android.tools.build:gradle:8.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
 
         // NOTE: Do not place your application dependencies here; they belong

@@ -16,16 +16,16 @@
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-parcelize'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "29.0.3"
+    compileSdkVersion rootProject.compileSdkVersion
+    namespace 'com.example.androidstudio.motionlayoutintegrations'
 
     defaultConfig {
         applicationId "com.example.androidstudio.motionlayoutintegrations"
         minSdkVersion 18
-        targetSdkVersion 30
+        targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -47,13 +47,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
-    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     implementation 'androidx.core:core-ktx:1.3.1'
-    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
-    testImplementation 'junit:junit:4.13'
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    testImplementation "junit:junit:$rootProject.junitVersion"
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation "com.google.android.material:material:$materialVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
 }

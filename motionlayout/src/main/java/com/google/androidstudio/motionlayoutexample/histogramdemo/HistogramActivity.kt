@@ -26,7 +26,6 @@ import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.androidstudio.motionlayoutexample.R
-import kotlinx.android.synthetic.main.histogram_layout.*
 import java.lang.RuntimeException
 import java.util.*
 import kotlin.collections.ArrayList
@@ -43,13 +42,17 @@ class HistogramActivity : AppCompatActivity() {
 
     // The main widget
     private var widget: HistogramWidget? = null
+    private lateinit var sortButton: View
+    private lateinit var bothButton: View
 
     private val animationGuard: HistogramAnimationGuard = HistogramAnimationGuard()
 
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.histogram_layout)
-        widget = histogram
+        widget = findViewById(R.id.histogram)
+        sortButton = findViewById(R.id.sort)
+        bothButton = findViewById(R.id.both)
         restoreView(savedInstanceState)
         widget!!.setTransitionListener(animationGuard.animationListener)
     }
@@ -150,8 +153,8 @@ class HistogramActivity : AppCompatActivity() {
          * for each bars. It means you cannot use chain feature of constraint layout. You'll need
          * to calculate the after-sorted x location of each bars manually and animate them.
          */
-        sort.setEnabledAndChangeColor(!animationInterruptible)
-        both.setEnabledAndChangeColor(!animationInterruptible)
+        sortButton.setEnabledAndChangeColor(!animationInterruptible)
+        bothButton.setEnabledAndChangeColor(!animationInterruptible)
     }
 }
 
